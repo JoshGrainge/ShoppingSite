@@ -1,0 +1,36 @@
+
+#header{
+  height: 10vh;
+  padding: 0 50px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.15rem;
+}
+
+.logo-section{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text{
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+#logo{
+  max-height: 100%;
+}
+
+#user-buttons{
+  display: flex;
+  width:200px;
+}
+
+#user-buttons > a:first-of-type{
+    margin-right: auto;
+}
+
+
