@@ -3,7 +3,7 @@ import './Home.css';
 
 function Home() {
   return (
-    <div className="center">
+    <main className="center">
       <div className="hero">
         <img
           src="https://images.pexels.com/photos/1252982/pexels-photo-1252982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -19,7 +19,7 @@ function Home() {
           <button className="">Shop now</button>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 
