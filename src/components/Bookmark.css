@@ -1,0 +1,34 @@
+.items-container{
+  margin: auto;
+  width:60%;
+
+}
+
+.bookmard-card{
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  border: 1px solid black;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.item-thumb{
+  height:100%;
+}
+
+.mid{
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+.full-height{
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+
+}

@@ -56,10 +56,20 @@ button{
   height:50px;
   border: none;
   border-radius: 5px;
-  color: #111;
+  color: var(--black);
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
+}
+
+button.black{
+  background-color: var(--black);
+  color: white;
+}
+
+button.small-btn{
+  width: 100px;
+  height: 50px;
 }
 
 main{
