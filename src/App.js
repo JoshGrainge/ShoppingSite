@@ -3,6 +3,7 @@ import './App.css';
 import Bookmark from './components/Bookmark';
 import Header from './components/Header';
 import Home from './components/Home';
+import Products from './components/Products';
 import { getAllData } from './FakeStoreAPI';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Header />
       {/* <Home /> */}
       {/* {shopItems && <Bookmark bookmarkItems={shopItems} />} */}
+      <Products />
     </div>
   );
 }
