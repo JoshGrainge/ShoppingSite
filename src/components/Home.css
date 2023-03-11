@@ -21,6 +21,9 @@
   margin: 0;
   position: relative;
   overflow: hidden;
+  background-image: url(https://images.pexels.com/photos/1252982/pexels-photo-1252982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: cover;
+  background-position: -150px 0px;
 }
 
 #hero-image{
