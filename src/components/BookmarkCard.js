@@ -1,9 +1,7 @@
-function BookmarkCard({ image, name, description, price }) {
-  const usdFormatter = Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-  });
+import React from 'react';
+import convertToUsd from '../CurrencyFormatter';
 
+function BookmarkCard({ image, name, description, price }) {
   return (
     <div className="bookmard-card">
       <img src={image} alt="item_preview" className="item-thumb" />
@@ -16,7 +14,7 @@ function BookmarkCard({ image, name, description, price }) {
       </div>
       <div className="full-height end">
         <div className="price-text">
-          <h3>{usdFormatter.format(price)}</h3>
+          <h3>{convertToUsd(price)}</h3>
           <small>
             <p>USD</p>
           </small>
