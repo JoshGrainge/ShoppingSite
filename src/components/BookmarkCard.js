@@ -1,5 +1,5 @@
 import React from 'react';
-import convertToUsd from '../CurrencyFormatter';
+import { convertToUsd } from '../CurrencyFormatter';
 
 function BookmarkCard({ image, name, description, price }) {
   return (
