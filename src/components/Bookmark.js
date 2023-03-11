@@ -1,31 +1,22 @@
 import './Bookmark.css';
 import BookmarkCard from './BookmarkCard';
 
-function Bookmark() {
+function Bookmark({ bookmarkItems }) {
   return (
     <main>
       <h2>Bookmarked Items</h2>
       <div className="items-container">
-        <BookmarkCard
-          name="Bag"
-          price="$19.45"
-          image="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-        />
-        <BookmarkCard
-          name="Bag2"
-          price="$19.45"
-          image="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-        />
-        <BookmarkCard
-          name="Bag3"
-          price="$19.45"
-          image="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-        />
-        <BookmarkCard
-          name="Bag4"
-          price="$19.45"
-          image="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-        />
+        {bookmarkItems.map((item) => {
+          return (
+            <BookmarkCard
+              key={item.id}
+              name={item.title}
+              description={item.description}
+              price={item.price}
+              image={item.image}
+            />
+          );
+        })}
       </div>
     </main>
   );

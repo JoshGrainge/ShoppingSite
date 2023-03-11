@@ -16,7 +16,8 @@
 }
 
 .item-thumb{
-  height:100%;
+  max-width: 90px;
+  object-fit: scale-down;
 }
 
 .mid{
@@ -30,5 +31,36 @@
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
+}
 
+.full-height > h3{
+    margin:0;
+}
+
+.full-height>small{
+    height: 3ch;
+    width: 80%;
+    flex-grow: 1;
+}
+
+.bookmark-description{
+    margin:0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.end{
+    align-items: center;
+}
+
+.price-text{
+    text-align: center;
+}
+
+.price-text > h3,
+.price-text > small > p{
+    margin:0;
 }
