@@ -1,3 +1,8 @@
+:root{
+  --white: #fff;
+  --black: #000;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +40,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App{
+  width:100vw;
+  height: 100vh;
+}
+
+.left-align{
+  text-align: left;
+}
+
+button{
+  width:150px;
+  height:50px;
+  border: none;
+  border-radius: 5px;
+  color: #111;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
 }
