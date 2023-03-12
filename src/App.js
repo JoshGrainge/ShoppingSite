@@ -4,10 +4,12 @@ import Bookmark from './components/Bookmark';
 import Header from './components/Header';
 import Home from './components/Home';
 import Products from './components/Products';
+import Cart from './components/Cart';
 import { getAllData } from './FakeStoreAPI';
 
 function App() {
   const [shopItems, setShopItems] = useState();
+  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
     async function getDataOnLoad() {
@@ -24,7 +26,8 @@ function App() {
       <Header />
       {/* <Home /> */}
       {/* {shopItems && <Bookmark bookmarkItems={shopItems} />} */}
-      <Products />
+      {/* <Products items={shopItems} /> */}
+      <Cart cartItems={shopItems} />
     </div>
   );
 }
