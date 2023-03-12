@@ -1,6 +1,9 @@
 :root{
   --white: #fff;
   --black: #000;
+  --border: 1px solid var(--black);
+  --border-mid: 2px solid var(--black);
+  --border-large: 5px solid var(--black);
 }
 
 .App {
@@ -58,6 +61,14 @@
   margin: 0;
 }
 
+.auto-margin{
+  margin: auto;
+}
+
+.inline{
+  display: inline;
+}
+
 button{
   width:150px;
   height:50px;
@@ -83,4 +94,16 @@ button.black{
 button.small-btn{
   width: 100px;
   height: 50px;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.med-font{
+  font-size: 1.25rem;
+}
+
+.big-font{
+  font-size: 2rem;
 }
