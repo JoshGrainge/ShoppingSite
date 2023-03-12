@@ -54,6 +54,10 @@
   text-align: left;
 }
 
+.no-margin{
+  margin: 0;
+}
+
 button{
   width:150px;
   height:50px;
@@ -65,9 +69,15 @@ button{
   cursor: pointer;
 }
 
+.circle-btn{
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+
 button.black{
   background-color: var(--black);
-  color: white;
+  color: var(--white);
 }
 
 button.small-btn{
