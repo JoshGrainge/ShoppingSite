@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import './App.css';
 import Bookmark from './components/Bookmark';
 import Header from './components/Header';
@@ -6,7 +6,7 @@ import Home from './components/Home';
 import Products from './components/Products';
 import Cart from './components/Cart';
 import { getAllData } from './FakeStoreAPI';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 
 function App() {
   // TODO make these an object instead of using multiple states
@@ -87,17 +87,19 @@ function App() {
     );
   }
 
+  const { search } = useLocation();
+  const query = useMemo(() => new URLSearchParams(search), [search]);
+
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route path="/" exact element={<Home />} />
-        {/* Get all items */}
         <Route
           path="/products"
-          exact={true}
           element={
             <Products
+              category={query.get('category')}
               items={shopItems}
               addToCart={addItemToCart}
               addToBookmark={addItemToBookmark}
@@ -106,7 +108,6 @@ function App() {
         />
         <Route
           path="/cart"
-          exact={true}
           element={
             <Cart
               cartItems={cartItems}
@@ -117,7 +118,6 @@ function App() {
         />
         <Route
           path="/bookmark"
-          exact={true}
           element={
             <Bookmark
               bookmarkItems={bookmarkItems}
