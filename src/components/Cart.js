@@ -46,14 +46,14 @@ function Cart({ cartItems, changeCartItemQuantity, removeItemFromCart }) {
                       onClick={() => changeCartItemQuantity(cartItem.item, -1)}
                       disabled={cartItem.quantity <= 1}
                     >
-                      -
+                      <i class="fa-solid fa-minus"></i>
                     </button>
                     <h2 className="quantity-text">{cartItem.quantity}</h2>
                     <button
                       className="circle-btn black bold big-font count-btn"
                       onClick={() => changeCartItemQuantity(cartItem.item, 1)}
                     >
-                      +
+                      <i class="fa-solid fa-plus"></i>
                     </button>
                   </div>
                   <h2 className="auto-margin">
