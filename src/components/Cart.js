@@ -4,16 +4,15 @@ import { convertToUsd } from '../CurrencyFormatter';
 
 // TODO make cart items be actual cart items not just all items
 
-function Cart({ cartItems }) {
+function Cart({ cartItems, changeCartItemQuantity, removeItemFromCart }) {
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
     if (cartItems == null) return;
 
     let tempTotal = 0;
-    cartItems.forEach((item) => {
-      console.log('Cart item price: ' + item.price);
-      tempTotal += item.price;
+    cartItems.forEach((cartItem) => {
+      tempTotal += cartItem.item.price * cartItem.quantity;
     });
 
     setTotal(tempTotal);
@@ -30,26 +29,43 @@ function Cart({ cartItems }) {
             <h3 className="auto-margin">Total</h3>
           </div>
           {cartItems &&
-            cartItems.map((item) => {
+            cartItems.map((cartItem) => {
               return (
-                <div key={item.id} className="item-card">
+                <div key={cartItem.item.id} className="item-card">
                   <img
-                    src={item.image}
+                    src={cartItem.item.image}
                     alt="Clothing-thumbnail"
                     className="checkout-thumb"
                   />
-                  <h2 className="auto-margin">{convertToUsd(item.price)}</h2>
+                  <h2 className="auto-margin">
+                    {convertToUsd(cartItem.item.price)}
+                  </h2>
                   <div className="increment-container">
-                    <button className="circle-btn black bold big-font count-btn">
+                    <button
+                      className="circle-btn black bold big-font count-btn"
+                      onClick={() => changeCartItemQuantity(cartItem.item, -1)}
+                      disabled={cartItem.quantity <= 1}
+                    >
                       -
                     </button>
-                    <h2 className="quantity-text">0</h2>
-                    <button className="circle-btn black bold big-font count-btn">
+                    <h2 className="quantity-text">{cartItem.quantity}</h2>
+                    <button
+                      className="circle-btn black bold big-font count-btn"
+                      onClick={() => changeCartItemQuantity(cartItem.item, 1)}
+                    >
                       +
                     </button>
                   </div>
-                  <h2 className="auto-margin">{convertToUsd(item.price)}</h2>
-                  <p className="item-title">{item.title}</p>
+                  <h2 className="auto-margin">
+                    {convertToUsd(cartItem.item.price)}
+                  </h2>
+                  <p className="item-title">{cartItem.item.title}</p>
+                  <button
+                    className="circle-btn black close-btn"
+                    onClick={() => removeItemFromCart(cartItem.item)}
+                  >
+                    <i class="fa-solid fa-x"></i>
+                  </button>
                 </div>
               );
             })}
