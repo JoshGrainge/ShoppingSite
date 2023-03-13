@@ -2,7 +2,7 @@ import React from 'react';
 import './Products.css';
 import ProductCard from './ProductCard';
 
-function Products({ items }) {
+function Products({ items, addToCart, addToBookmark }) {
   return (
     <main className="products-layout">
       <div className="search-tab">
@@ -33,6 +33,8 @@ function Products({ items }) {
                 image={item.image}
                 rating={item.rating.rate}
                 ratingCount={item.rating.count}
+                addToCart={() => addToCart(item)}
+                addToBookmark={() => addToBookmark(item)}
               />
             );
           })}

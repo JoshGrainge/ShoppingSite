@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 import { convertToUsd } from '../CurrencyFormatter';
 import Rating from './Rating';
 
-function ProductCard({ name, price, image, rating, ratingCount }) {
+function ProductCard({
+  name,
+  price,
+  image,
+  rating,
+  ratingCount,
+  addToCart,
+  addToBookmark,
+}) {
   const [showButtons, setShowButton] = useState(false);
 
   return (
@@ -17,10 +25,15 @@ function ProductCard({ name, price, image, rating, ratingCount }) {
     >
       <img src={image} alt="product-preview" className="product-thumb" />
       {showButtons && (
-        <button className="black add-cart-btn">Add to Cart</button>
+        <button className="black add-cart-btn" onClick={addToCart}>
+          Add to Cart
+        </button>
       )}
       {showButtons && (
-        <button className="black circle-btn bookmark-btn">
+        <button
+          className="black circle-btn bookmark-btn"
+          onClick={addToBookmark}
+        >
           <i className="fa-solid fa-bookmark"></i>
         </button>
       )}
