@@ -1,6 +1,8 @@
 :root{
   --white: #fff;
   --black: #000;
+  --disable-color: #999999;
+  --disable-textcolor: #eeeeee;
   --border: 1px solid var(--black);
   --border-mid: 2px solid var(--black);
   --border-large: 5px solid var(--black);
@@ -78,6 +80,7 @@ button{
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
+  transition: .1s;
 }
 
 .circle-btn{
@@ -91,10 +94,37 @@ button.black{
   color: var(--white);
 }
 
+button:hover{
+  background-color: var(--black);
+  border: 3px solid var(--white);
+  color: var(--white);
+}
+
+button.black:hover{
+  background-color: var(--white);
+  border: 3px solid var(--black);
+  color: var(--black);
+}
+
+button:active{
+  transform: scale(.9);
+}
+
+button:disabled,
+button:disabled:hover,
+button:disabled:active{
+  background-color: var(--disable-color);
+  border: none;
+  color: var(--disable-textcolor);
+  transform: unset;
+  cursor: unset;
+}
+
 button.small-btn{
   width: 100px;
   height: 50px;
 }
+
 
 .bold{
   font-weight: bold;
