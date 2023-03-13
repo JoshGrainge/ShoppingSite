@@ -1,7 +1,14 @@
 import React from 'react';
 import { convertToUsd } from '../CurrencyFormatter';
 
-function BookmarkCard({ image, name, description, price }) {
+function BookmarkCard({
+  image,
+  name,
+  description,
+  price,
+  removeFromBookmark,
+  addToCart,
+}) {
   return (
     <div className="bookmard-card">
       <img src={image} alt="item_preview" className="item-thumb" />
@@ -10,7 +17,9 @@ function BookmarkCard({ image, name, description, price }) {
         <small>
           <p className="bookmark-description">{description}</p>
         </small>
-        <button className="black small-btn">Remove</button>
+        <button className="black small-btn" onClick={removeFromBookmark}>
+          Remove
+        </button>
       </div>
       <div className="full-height end">
         <div className="price-text">
@@ -19,7 +28,9 @@ function BookmarkCard({ image, name, description, price }) {
             <p>USD</p>
           </small>
         </div>
-        <button className="black">Add to Cart</button>
+        <button className="black" onClick={addToCart}>
+          Add to Cart
+        </button>
       </div>
     </div>
   );

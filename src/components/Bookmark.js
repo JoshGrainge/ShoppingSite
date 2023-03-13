@@ -1,7 +1,7 @@
 import './Bookmark.css';
 import BookmarkCard from './BookmarkCard';
 
-function Bookmark({ bookmarkItems }) {
+function Bookmark({ bookmarkItems, removeFromBookmark, addToCart }) {
   return (
     <main>
       <h2>Bookmarked Items</h2>
@@ -14,6 +14,12 @@ function Bookmark({ bookmarkItems }) {
               description={item.description}
               price={item.price}
               image={item.image}
+              removeFromBookmark={() => {
+                removeFromBookmark(item);
+              }}
+              addToCart={() => {
+                addToCart(item);
+              }}
             />
           );
         })}
