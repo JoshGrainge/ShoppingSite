@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Products from './components/Products';
 import Cart from './components/Cart';
 import { getAllData } from './FakeStoreAPI';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   // TODO make these an object instead of using multiple states
@@ -89,22 +90,43 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Home /> */}
-      {/* <Products
-        items={shopItems}
-        addToCart={addItemToCart}
-        addToBookmark={addItemToBookmark}
-      />
-      <Cart
-        cartItems={cartItems}
-        changeCartItemQuantity={changeCartItemQuantity}
-        removeItemFromCart={removeItemFromCart}
-      />
-      <Bookmark
-        bookmarkItems={bookmarkItems}
-        addToCart={addItemToCart}
-        removeFromBookmark={removeFromBookmark}
-      /> */}
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        {/* Get all items */}
+        <Route
+          path="/products"
+          exact={true}
+          element={
+            <Products
+              items={shopItems}
+              addToCart={addItemToCart}
+              addToBookmark={addItemToBookmark}
+            />
+          }
+        />
+        <Route
+          path="/cart"
+          exact={true}
+          element={
+            <Cart
+              cartItems={cartItems}
+              changeCartItemQuantity={changeCartItemQuantity}
+              removeItemFromCart={removeItemFromCart}
+            />
+          }
+        />
+        <Route
+          path="/bookmark"
+          exact={true}
+          element={
+            <Bookmark
+              bookmarkItems={bookmarkItems}
+              addToCart={addItemToCart}
+              removeFromBookmark={removeFromBookmark}
+            />
+          }
+        />
+      </Routes>
     </div>
   );
 }
