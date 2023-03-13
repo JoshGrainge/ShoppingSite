@@ -57,7 +57,7 @@ function Cart({ cartItems, changeCartItemQuantity, removeItemFromCart }) {
                     </button>
                   </div>
                   <h2 className="auto-margin">
-                    {convertToUsd(cartItem.item.price)}
+                    {convertToUsd(cartItem.item.price * cartItem.quantity)}
                   </h2>
                   <p className="item-title">{cartItem.item.title}</p>
                   <button
