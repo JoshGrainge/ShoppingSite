@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Cart.css';
 import { convertToUsd } from '../CurrencyFormatter';
 
-// TODO make cart items be actual cart items not just all items
+// TODO make cart items be component not just all items
 
 function Cart({ cartItems, changeCartItemQuantity, removeItemFromCart }) {
   const [total, setTotal] = useState(0);
