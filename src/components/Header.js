@@ -17,15 +17,16 @@ function Header({ categories }) {
       </>
       <div id="products">
         <p>
-          Products <i class="fa-sharp fa-solid fa-caret-down"></i>
+          Products <i className="fa-sharp fa-solid fa-caret-down"></i>
         </p>
         <nav className="product-links">
           <NavLink className="dropdown-link" to="/products">
             All
           </NavLink>
-          {categories.map((category) => {
+          {categories.map((category, i) => {
             return (
               <NavLink
+                key={i}
                 className="dropdown-link"
                 to={`/products?category=${category}`}
               >
@@ -43,7 +44,7 @@ function Header({ categories }) {
         </Link>
         <Link to="cart">
           <button className="circle-btn black header-btn">
-            <i class="fa-solid fa-cart-shopping"></i>
+            <i className="fa-solid fa-cart-shopping"></i>
           </button>
         </Link>
       </div>
