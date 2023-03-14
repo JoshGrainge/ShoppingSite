@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../logo.svg';
 import './Header.css';
 
-function Header() {
+function Header({ categories }) {
   return (
     <div id="header">
       <>
@@ -23,27 +23,16 @@ function Header() {
           <NavLink className="dropdown-link" to="/products">
             All
           </NavLink>
-          <NavLink
-            className="dropdown-link"
-            to="/products?category=electronics"
-          >
-            Electronics
-          </NavLink>
-          <NavLink className="dropdown-link" to="/products?category=jewelery">
-            Jewelery
-          </NavLink>
-          <NavLink
-            className="dropdown-link"
-            to="/products?category=men's clothing"
-          >
-            Men's clothing
-          </NavLink>
-          <NavLink
-            className="dropdown-link"
-            to="/products?category=women's clothing"
-          >
-            Women's clothing
-          </NavLink>
+          {categories.map((category) => {
+            return (
+              <NavLink
+                className="dropdown-link"
+                to={`/products?category=${category}`}
+              >
+                {[category[0].toUpperCase(), ...category.slice(1)]}
+              </NavLink>
+            );
+          })}
         </nav>
       </div>
       <div id="user-buttons">

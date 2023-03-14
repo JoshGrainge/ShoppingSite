@@ -5,19 +5,19 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Products from './components/Products';
 import Cart from './components/Cart';
-import { getAllData } from './FakeStoreAPI';
+import { getAllData, getAllCategories } from './FakeStoreAPI';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
 function App() {
   // TODO make these an object instead of using multiple states
-  const [shopItems, setShopItems] = useState();
   const [cartItems, setCartItems] = useState([]);
   const [bookmarkItems, setBookmarkItems] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     async function getDataOnLoad() {
-      const result = await getAllData();
-      setShopItems(result);
+      const categoriesResult = await getAllCategories();
+      setCategories(categoriesResult);
     }
     getDataOnLoad();
   }, []);
@@ -92,7 +92,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header categories={categories} />
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route
@@ -100,7 +100,6 @@ function App() {
           element={
             <Products
               category={query.get('category')}
-              items={shopItems}
               addToCart={addItemToCart}
               addToBookmark={addItemToBookmark}
             />
