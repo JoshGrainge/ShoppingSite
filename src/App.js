@@ -92,7 +92,14 @@ function App() {
 
   return (
     <div className="App">
-      <Header categories={categories} />
+      <Header
+        categories={categories}
+        bookmarkItemsCount={bookmarkItems.length}
+        cartItemsCount={cartItems.reduce(
+          (total, item) => total + item.quantity,
+          0
+        )}
+      />
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route

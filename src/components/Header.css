@@ -97,4 +97,25 @@
 .header-btn{
   width:60px;
   height:60px;
+  position: relative;
+}
+
+.header-btn-counter{
+  position: absolute;
+  margin: -5px;
+  width:20px;
+  height:20px;
+  padding: 10px;
+  bottom: 0;
+  right: 0;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+}
+
+.header-btn-counter>p{
+  margin: -10px;
+}
+
+.header-btn:hover > .header-btn-counter{
+  color: white;
 }

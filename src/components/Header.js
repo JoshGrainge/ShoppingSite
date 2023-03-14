@@ -2,7 +2,7 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../logo.svg';
 import './Header.css';
 
-function Header({ categories }) {
+function Header({ categories, bookmarkItemsCount, cartItemsCount }) {
   return (
     <div id="header">
       <>
@@ -40,11 +40,17 @@ function Header({ categories }) {
         <Link to="bookmark">
           <button className="circle-btn black header-btn">
             <i className="fa-solid fa-bookmark"></i>
+            <div className="header-btn-counter">
+              <p>{bookmarkItemsCount}</p>
+            </div>
           </button>
         </Link>
         <Link to="cart">
           <button className="circle-btn black header-btn">
             <i className="fa-solid fa-cart-shopping"></i>
+            <div className="header-btn-counter">
+              <p>{cartItemsCount}</p>
+            </div>
           </button>
         </Link>
       </div>
