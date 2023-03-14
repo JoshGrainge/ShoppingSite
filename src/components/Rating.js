@@ -10,7 +10,6 @@ function Rating({ rating, ratingCount }) {
     elements.push(star);
   }
 
-  //   elements.push(<p style={{ color: 'black' }}>rating: {rating}</p>);
   elements.push(<span>({ratingCount})</span>);
 
   return <div className="star-container">{elements}</div>;
