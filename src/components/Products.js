@@ -96,14 +96,12 @@ function Products({ category, addToCart, addToBookmark }) {
             <input
               type="number"
               value={searchSettings.minPrice}
+              min={0}
               onChange={(e) => {
                 setSearchSettings((prev) => {
                   return {
                     ...prev,
-                    minPrice: Math.max(
-                      Math.min(e.target.value, prev.maxPrice),
-                      0
-                    ),
+                    minPrice: Math.min(e.target.value, prev.maxPrice),
                   };
                 });
               }}
@@ -115,6 +113,7 @@ function Products({ category, addToCart, addToBookmark }) {
             <input
               type="number"
               value={searchSettings.maxPrice}
+              min={0}
               onChange={(e) => {
                 setSearchSettings((prev) => {
                   return {
