@@ -108,3 +108,10 @@
     width: 90%;
     margin-top: 50px;
 }
+
+.cart-empty-message{
+    position: unset;
+    transform: unset;
+    width: 100%;
+    margin-top: 250px;
+}

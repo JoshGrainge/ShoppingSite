@@ -69,6 +69,11 @@ function Cart({ cartItems, changeCartItemQuantity, removeItemFromCart }) {
                 </div>
               );
             })}
+          {cartItems.length === 0 && (
+            <div className="fixed-center cart-empty-message">
+              <p>No items in cart</p>
+            </div>
+          )}
         </div>
         <div className="payment-container">
           <div className="payment-text">
