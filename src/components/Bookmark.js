@@ -23,6 +23,11 @@ function Bookmark({ bookmarkItems, removeFromBookmark, addToCart }) {
             />
           );
         })}
+        {bookmarkItems.length === 0 && (
+          <div className="fixed-center">
+            <p>You have no bookmarked item</p>
+          </div>
+        )}
       </div>
     </main>
   );
