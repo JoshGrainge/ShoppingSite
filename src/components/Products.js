@@ -148,7 +148,7 @@ function Products({ category, addToCart, addToBookmark }) {
             );
           })}
         {filteredItems.length === 0 && (
-          <div className="no-items">
+          <div className="fixed-center">
             <p>
               No items found
               <br />
