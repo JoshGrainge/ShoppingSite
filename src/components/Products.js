@@ -67,6 +67,26 @@ function Products({ category, addToCart, addToBookmark }) {
     );
   });
 
+  const ratingRadios = [];
+  for (let i = 1; i <= 5; i++) {
+    ratingRadios.push(
+      <label className="search-radio-item">
+        <input
+          type="radio"
+          name="star-rating-min"
+          value={i}
+          onChange={(e) => {
+            setSearchSettings((prev) => {
+              return { ...prev, minStars: e.target.value };
+            });
+          }}
+          className="search-radio"
+        />
+        {i}
+      </label>
+    );
+  }
+
   return (
     <main className="products-layout">
       <div className="search-tab">
@@ -87,7 +107,8 @@ function Products({ category, addToCart, addToBookmark }) {
                   };
                 });
               }}
-            ></input>
+              className="search-query-input"
+            />
           </label>
           <label>
             Price Max
@@ -102,77 +123,12 @@ function Products({ category, addToCart, addToBookmark }) {
                   };
                 });
               }}
-            ></input>
+              className="search-query-input"
+            />
           </label>
 
           <p>Min Star Rating:</p>
-          <div className="star-rating">
-            <label>
-              <input
-                type="radio"
-                name="star-rating-min"
-                value={1}
-                onChange={(e) => {
-                  setSearchSettings((prev) => {
-                    return { ...prev, minStars: e.target.value };
-                  });
-                }}
-              />
-              1
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="star-rating-min"
-                value={2}
-                onChange={(e) => {
-                  setSearchSettings((prev) => {
-                    return { ...prev, minStars: e.target.value };
-                  });
-                }}
-              />
-              2
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="star-rating-min"
-                value={3}
-                onChange={(e) => {
-                  setSearchSettings((prev) => {
-                    return { ...prev, minStars: e.target.value };
-                  });
-                }}
-              />
-              3
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="star-rating-min"
-                value={4}
-                onChange={(e) => {
-                  setSearchSettings((prev) => {
-                    return { ...prev, minStars: e.target.value };
-                  });
-                }}
-              />
-              4
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="star-rating-min"
-                value={5}
-                onChange={(e) => {
-                  setSearchSettings((prev) => {
-                    return { ...prev, minStars: e.target.value };
-                  });
-                }}
-              />
-              5
-            </label>
-          </div>
+          <div className="star-rating">{ratingRadios}</div>
         </div>
       </div>
       <div className="products-container">
@@ -191,6 +147,15 @@ function Products({ category, addToCart, addToBookmark }) {
               />
             );
           })}
+        {filteredItems.length === 0 && (
+          <div className="no-items">
+            <p>
+              No items found
+              <br />
+              Try broadening search parameters or refreshing page
+            </p>
+          </div>
+        )}
       </div>
     </main>
   );
