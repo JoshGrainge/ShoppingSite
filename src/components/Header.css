@@ -2,7 +2,7 @@
 #header{
   height: 10vh;
   padding: 0 50px;
-  border: 1px solid black;
+  border-bottom: 3px solid black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,6 +13,8 @@
   height: 100%;
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: var(--black);
 }
 
 .logo-text{
@@ -44,8 +46,8 @@
 }
 
 #products{
-  border-right: var(--border);
-  border-left: var(--border);
+  border-right: var(--border-mid);
+  border-left: var(--border-mid);
   z-index: 2;
   font-size: 1.5rem;
 }

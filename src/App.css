@@ -4,7 +4,7 @@
   --disable-color: #999999;
   --disable-textcolor: #eeeeee;
   --border: 1px solid var(--black);
-  --border-mid: 2px solid var(--black);
+  --border-mid: 3px solid var(--black);
   --border-large: 5px solid var(--black);
 }
 
