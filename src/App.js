@@ -5,7 +5,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Products from './components/Products';
 import Cart from './components/Cart';
-import { getAllData, getAllCategories } from './FakeStoreAPI';
+import { getAllCategories } from './FakeStoreAPI';
 import { Route, Routes, useLocation } from 'react-router-dom';
 
 function App() {
