@@ -41,7 +41,7 @@ function Header({ categories, bookmarkItemsCount, cartItemsCount }) {
           <button className="circle-btn black header-btn">
             <i className="fa-solid fa-bookmark"></i>
             <div className="header-btn-counter">
-              <p>{bookmarkItemsCount}</p>
+              <p>{bookmarkItemsCount < 100 ? bookmarkItemsCount : '99+'}</p>
             </div>
           </button>
         </Link>
@@ -49,7 +49,7 @@ function Header({ categories, bookmarkItemsCount, cartItemsCount }) {
           <button className="circle-btn black header-btn">
             <i className="fa-solid fa-cart-shopping"></i>
             <div className="header-btn-counter">
-              <p>{cartItemsCount}</p>
+              <p>{cartItemsCount < 100 ? cartItemsCount : '99+'}</p>
             </div>
           </button>
         </Link>
