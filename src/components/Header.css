@@ -1,12 +1,16 @@
 
 #header{
-  height: 10vh;
+  height: var(--header-height);
   padding: 0 50px;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid var(--black);
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1.15rem;
+  position: sticky;
+  background-color: var(--white);
+  top:0;
+  z-index: 2;
 }
 
 .logo-section{
@@ -48,7 +52,6 @@
 #products{
   border-right: var(--border-mid);
   border-left: var(--border-mid);
-  z-index: 2;
   font-size: 1.5rem;
 }
 
