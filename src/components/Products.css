@@ -37,8 +37,9 @@
     margin-bottom: 10px;
 }
 
-.search-radio-item + .search-radio-item{
-    padding: 5px;
+.search-radio-item{
+    font-family: 'Montserrat', sans-serif;
+    padding: 0 5px;
 }
 
 .search-query-input{

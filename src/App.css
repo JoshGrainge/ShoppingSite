@@ -80,6 +80,7 @@ button{
   font-weight: bold;
   cursor: pointer;
   transition: .1s;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .circle-btn{
