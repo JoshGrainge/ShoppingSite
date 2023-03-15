@@ -2,6 +2,7 @@
   --white: #fff;
   --black: #000;
   --accent-color: #ff4242;
+  --shadow-color: #00000038;
   --disable-color: #999999;
   --disable-textcolor: #eeeeee;
   --border: 1px solid var(--black);
