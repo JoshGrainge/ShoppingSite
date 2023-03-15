@@ -18,7 +18,10 @@
     position: sticky;
     top: var(--header-height);
     height: 250px;
-    
+    border: none;
+    border-right: var(--border-mid);
+    border-bottom: var(--border-mid);
+    border-radius: 0 0 25px 0;
 }
 
 .options-container{
@@ -30,12 +33,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px;
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
 }
 
 .options-container > label{
     margin-bottom: 10px;
 }
+
 
 .search-radio-item{
     font-family: 'Montserrat', sans-serif;
