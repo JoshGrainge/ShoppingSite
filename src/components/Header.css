@@ -38,7 +38,8 @@
 }
 
 #user-buttons > a:first-of-type{
-    margin-right: auto;
+    margin-left: auto;
+    margin-right: 50px;
 }
 
 #products{
