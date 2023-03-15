@@ -75,6 +75,13 @@
     justify-content: space-between;
 }
 
+.product-text > p{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .product-text > h2{
     margin: 5px;
