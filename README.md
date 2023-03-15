@@ -20,7 +20,7 @@ The user has the ability to add items to your bookmarks for later and while brow
 
 ### Technologies
 
-Frontend library: [React](https://reactjs.org/)
-Clothing items API: [Fake Store API](https://fakestoreapi.com/)
-Logo: [Logo Dust](https://logodust.com/)
-Font Icons: [Font Awesome](https://fontawesome.com/)
+- Frontend library: [React](https://reactjs.org/)
+- Clothing items API: [Fake Store API](https://fakestoreapi.com/)
+- Logo: [Logo Dust](https://logodust.com/)
+- Font Icons: [Font Awesome](https://fontawesome.com/)
