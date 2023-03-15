@@ -33,14 +33,13 @@
 .item-heading,
 .payment-container{
     position: sticky;
-    top: 0;
+    top: var(--header-height);
 }
 
 .payment-container{
     border: var(--border-mid);
-
+    top: calc(var(--header-height) + 15px);
 }
-
 
 .item-card{
     height: 200px;
