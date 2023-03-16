@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import getAppName from '../AppName';
 
 function Home() {
+  const appName = getAppName();
+
   return (
     <main className="center">
       <div className="hero">
@@ -12,7 +15,7 @@ function Home() {
             Tons of hot sales for the hot weather. Get tops, bikinis, and shades
             for over 80% off
           </p>
-          <Link to="ShoppingSite/products">
+          <Link to={`${appName}/products`}>
             <button className="">Shop now</button>
           </Link>
         </div>

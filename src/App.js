@@ -7,6 +7,7 @@ import Products from './components/Products';
 import Cart from './components/Cart';
 import { getAllCategories } from './FakeStoreAPI';
 import { Route, Routes, useLocation } from 'react-router-dom';
+import getAppName from './AppName';
 
 function App() {
   // TODO make these an object instead of using multiple states
@@ -90,7 +91,7 @@ function App() {
   const { search } = useLocation();
   const query = useMemo(() => new URLSearchParams(search), [search]);
 
-  const ghPagesAppName = 'ShoppingSite';
+  const appName = getAppName();
 
   return (
     <div className="App">
@@ -103,9 +104,9 @@ function App() {
         )}
       />
       <Routes>
-        <Route path={`${ghPagesAppName}/`} exact element={<Home />} />
+        <Route path={`${appName}/`} exact element={<Home />} />
         <Route
-          path={`${ghPagesAppName}/products`}
+          path={`${appName}/products`}
           element={
             <Products
               category={query.get('category')}
@@ -115,7 +116,7 @@ function App() {
           }
         />
         <Route
-          path={`${ghPagesAppName}/cart`}
+          path={`${appName}/cart`}
           element={
             <Cart
               cartItems={cartItems}
@@ -125,7 +126,7 @@ function App() {
           }
         />
         <Route
-          path={`${ghPagesAppName}/bookmark`}
+          path={`${appName}/bookmark`}
           element={
             <Bookmark
               bookmarkItems={bookmarkItems}

@@ -1,12 +1,15 @@
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../logo.svg';
 import './Header.css';
+import getAppName from '../AppName';
 
 function Header({ categories, bookmarkItemsCount, cartItemsCount }) {
+  const appName = getAppName();
+
   return (
     <div id="header">
       <>
-        <Link to="/" className="logo-section">
+        <Link to={`${appName}/`} className="logo-section">
           <img src={logo} alt="logo" id="logo" />
           <h1 className="logo-text">
             Kitty
@@ -20,7 +23,7 @@ function Header({ categories, bookmarkItemsCount, cartItemsCount }) {
           Products <i className="fa-sharp fa-solid fa-caret-down"></i>
         </p>
         <nav className="product-links">
-          <NavLink className="dropdown-link" to="/products">
+          <NavLink className="dropdown-link" to={`${appName}/products`}>
             All
           </NavLink>
           {categories.map((category, i) => {
@@ -28,7 +31,7 @@ function Header({ categories, bookmarkItemsCount, cartItemsCount }) {
               <NavLink
                 key={i}
                 className="dropdown-link"
-                to={`/products?category=${category}`}
+                to={`${appName}/products?category=${category}`}
               >
                 {[category[0].toUpperCase(), ...category.slice(1)]}
               </NavLink>
@@ -37,7 +40,7 @@ function Header({ categories, bookmarkItemsCount, cartItemsCount }) {
         </nav>
       </div>
       <div id="user-buttons">
-        <Link to="bookmark">
+        <Link to={`${appName}/bookmark`}>
           <button className="circle-btn black header-btn">
             <i className="fa-solid fa-bookmark"></i>
             <div className="header-btn-counter">
@@ -45,7 +48,7 @@ function Header({ categories, bookmarkItemsCount, cartItemsCount }) {
             </div>
           </button>
         </Link>
-        <Link to="cart">
+        <Link to={`${appName}/cart`}>
           <button className="circle-btn black header-btn">
             <i className="fa-solid fa-cart-shopping"></i>
             <div className="header-btn-counter">
