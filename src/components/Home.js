@@ -13,7 +13,7 @@ function Home() {
             Tons of hot sales for the hot weather. Get tops, bikinis, and shades
             for over 80% off
           </p>
-          <Link to={'products'}>
+          <Link to={`/${getAppName()}/products`}>
             <button className="">Shop now</button>
           </Link>
         </div>
