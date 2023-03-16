@@ -18,7 +18,7 @@ The user can add items to their cart and increase or decrease the items quantity
 
 The user has the ability to add items to your bookmarks for later and while browsing your bookmarks you can easily add bookmarked items to your cart.
 
-### Technologies
+## Technologies
 
 - Frontend library: [React](https://reactjs.org/)
 - Clothing items API: [Fake Store API](https://fakestoreapi.com/)
