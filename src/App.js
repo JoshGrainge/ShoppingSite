@@ -90,6 +90,8 @@ function App() {
   const { search } = useLocation();
   const query = useMemo(() => new URLSearchParams(search), [search]);
 
+  const ghPagesAppName = 'ShoppingSite';
+
   return (
     <div className="App">
       <Header
@@ -101,9 +103,9 @@ function App() {
         )}
       />
       <Routes>
-        <Route path="/" exact element={<Home />} />
+        <Route path={`${ghPagesAppName}/`} exact element={<Home />} />
         <Route
-          path="/products"
+          path={`${ghPagesAppName}/products`}
           element={
             <Products
               category={query.get('category')}
@@ -113,7 +115,7 @@ function App() {
           }
         />
         <Route
-          path="/cart"
+          path={`${ghPagesAppName}/cart`}
           element={
             <Cart
               cartItems={cartItems}
@@ -123,7 +125,7 @@ function App() {
           }
         />
         <Route
-          path="/bookmark"
+          path={`${ghPagesAppName}/bookmark`}
           element={
             <Bookmark
               bookmarkItems={bookmarkItems}
